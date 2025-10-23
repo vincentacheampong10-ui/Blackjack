@@ -11,7 +11,8 @@ public class Hand {
 
     // A Card is dealt to the Hand and the Hand is responsible
 // to store the card
-    public void Deal(Card card) {
+    public void deal(Card card) {
+        card.flip();
         cards.add(card);
     }
 
@@ -24,11 +25,14 @@ public class Hand {
     public int getValue() {
         int value = 0;
         for (Card card : cards) {
-            card.flip(); // turn the card over to see the value
             value += card.getPointValue();
-            card.flip(); // hide the card again
         }
         return value;
+    }
+    public void showCards() {
+        for (Card card : cards) {
+            System.out.println(card.getValue() + " of " + card.getSuit());
+        }
     }
 }
 

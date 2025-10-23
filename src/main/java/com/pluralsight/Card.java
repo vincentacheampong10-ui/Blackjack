@@ -42,10 +42,10 @@ public class Card {
             return 0;  // Can't see face-down cards
         }
         switch (value) {
-            case "A":
-                return 11;
-            case "K", "Q", "J":
-                return 10;
+            case "A": return 11;
+            case "K": return 10;
+            case "Q": return 10;
+            case "J": return 10;
             default:
                 try {
                     return Integer.parseInt(value); // Convert "2"–"10" to numbers
